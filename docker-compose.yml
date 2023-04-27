@@ -29,10 +29,12 @@ services:
     depends_on:
       - mongo_db
 
+
   # SERVER service
   server:
     build: ./server
     container_name: container_server
+    context: Dockerfile
     restart: always
     ports:
       - "8080:8080"
