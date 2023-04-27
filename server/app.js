@@ -6,7 +6,7 @@ const cors = require("cors");
 const initDataBase = require("./initDB/initDataBase");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
-const config = require("./config/default.json");
+// const config = require("./config/default.json");
 const path = require("path");
 const app = express();
 
@@ -43,18 +43,18 @@ async function start() {
     mongoose.connection.once("open", () => {
       initDataBase();
     });
-    await mongoose.connect(config.MONGODB_URI, {
-      dbName: config.DB_NAME,
-      user: config.DB_USER,
-      pass: config.DB_PASS,
+    await mongoose.connect(process.env.MONGODB_URI, {
+      dbName: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      pass: process.env.DB_PASS,
     });
 
     console.log(chalk.green("MongoDB подключен!"));
 
-    app.listen(config.PORT, () => {
+    app.listen(process.env.PORT, () => {
       console.log(
         chalk.greenBright(
-          `Сервер запущен host: http://localhost:${config.PORT}/`
+          `Сервер запущен host: http://localhost:${process.env.PORT}/`
         )
       );
     });

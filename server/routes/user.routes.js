@@ -4,10 +4,10 @@ const auth = require("../middleware/auth.middleware");
 const router = express.Router({ mergeParams: true });
 const fs = require("fs/promises");
 const chalk = require("chalk");
-const config = require("config");
+// const config = require("config");
 
-const BASE_URL = config.get("BASE_URL");
-
+// const BASE_URL = config.get("BASE_URL");
+const BASE_URL = process.env.BASE_URL;
 router.patch("/:userId", auth, async (req, res) => {
   try {
     const { userId } = req.params;
