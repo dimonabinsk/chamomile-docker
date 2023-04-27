@@ -6,7 +6,7 @@ COPY client/package*.json /app/client/
 
 RUN npm install
 
-COPY /client/ /app/client/
+COPY ./client /app/client/
 
 RUN npm run build
 
