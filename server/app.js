@@ -6,7 +6,7 @@ const cors = require("cors");
 const initDataBase = require("./initDB/initDataBase");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
-
+const config = require("./config/default.json");
 const app = express();
 
 app.use(express.static("public"));
@@ -18,12 +18,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // /api
 app.use("/api", routes);
-
-// if (process.env.NODE_ENV === "production") {
-//   console.log("Production");
-// } else {
-//   console.log("Development");
-// }
 
 if (process.env.NODE_ENV === "production") {
   app.use("/", express.static(path.join(__dirname, "client")));
@@ -40,18 +34,18 @@ async function start() {
     mongoose.connection.once("open", () => {
       initDataBase();
     });
-    await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: process.env.DB_NAME,
-      user: process.env.DB_USER,
-      pass: process.env.DB_PASS,
+    await mongoose.connect(config.MONGODB_URI, {
+      dbName: config.DB_NAME,
+      user: config.DB_USER,
+      pass: config.DB_PASS,
     });
 
     console.log(chalk.green("MongoDB подключен!"));
 
-    app.listen(process.env.PORT, () => {
+    app.listen(config.PORT, () => {
       console.log(
         chalk.greenBright(
-          `Сервер запущен host: http://localhost:${process.env.PORT}/`
+          `Сервер запущен host: http://localhost:${config.PORT}/`
         )
       );
     });
