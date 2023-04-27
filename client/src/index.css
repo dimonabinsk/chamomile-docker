@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Futura Bk RT";
+    font-weight: 400;
+    src: local("Futura Bk RT"),
+      url(./fonts/futurabkbtrusbyme_book.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Futura Bk BT";
+    font-weight: 400;
+    src: local("Futura"),
+      url(./fonts/futuramdbtrusbyme_bold.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Futura Md BT";
+    font-weight: 400;
+    src: local("Futura"),
+      url(./fonts/futuramdbtrusbyme_medium.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Miama Nueva";
+    font-weight: 400;
+    src: local("Miama Nueva"), url(./fonts/miamanueva.otf) format("opentype");
+  }
+}
+
+@layer components {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4e7440 #79a668;
+  }
+  *::-webkit-scrollbar {
+    max-width: 10px; /* ширина scrollbar */
+  }
+  .scroll_card::-webkit-scrollbar {
+    max-width: 6px; /* ширина scrollbar */
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent; /* цвет дорожки */
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: transparent; /* цвет плашки */
+    border-radius: 10px; /* закругления плашки */
+    border: 3px solid #79a668; /* border вокруг плашки */
+  }
+  .scroll_card::-webkit-scrollbar-thumb {
+    background-color: transparent; /* цвет плашки */
+    border-radius: 6px; /* закругления плашки */
+    border: 2px solid #79a668; /* border вокруг плашки */
+  }
+}
+
+@layer utilities {
+  .banner-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .banner-title {
+    font-size: calc(28px + (60 - 28) * ((100vw - 320px) / (1440 - 320)));
+    line-height: calc(35px + (77 - 35) * ((100vw - 320px) / (1440 - 320)));
+  }
+
+  .banner-txt {
+    font-family: "Miama Nueva";
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: normal;
+    font-size: calc(24px + (42 - 24) * ((100vw - 320px) / (1440 - 320)));
+    line-height: calc(40px + (100 - 40) * ((100vw - 320px) / (1440 - 320)));
+    position: absolute;
+  }
+  /*link category*/
+
+  .live-plants {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .access {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 90%;
+  }
+  .plant-care {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Loader */
+  .lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #00cc00;
+    margin: -4px 0 0 -4px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
