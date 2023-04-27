@@ -32,9 +32,8 @@ services:
 
   # SERVER service
   server:
-    build: ./server
+    build: .
     container_name: container_server
-    context: Dockerfile
     restart: always
     ports:
       - "8080:8080"
@@ -42,7 +41,6 @@ services:
       - ./server/:/usr/src/app/
     environment:
       PORT: 8080
-      NODE_ENV: "production"
       MONGODB_URI: mongodb://root:admin@mongo_db:27017/
       DB_NAME: chamomile_db
       NAME: Dimon

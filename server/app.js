@@ -17,7 +17,7 @@ app.use(fileupload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // /api
-app.use("/api/v1", routes);
+app.use("/api", routes);
 
 // if (process.env.NODE_ENV === "production") {
 //   console.log("Production");

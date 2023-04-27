@@ -2,5 +2,5 @@
   "port": 8080,
   "accessSecret": "super secret from backend",
   "refreshSecret": "super refresh key",
-  "BASE_URL": "https://mda-web.ru/api/v1"
+  "BASE_URL": "https://mda-web.ru/api"
 }
