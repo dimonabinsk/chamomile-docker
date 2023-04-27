@@ -20,7 +20,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // /api
 app.use("/api", routes);
 
-if (process.env.NODE_ENV === "production") {
+// if (process.env.NODE_ENV === "production") {
+//   app.use("/", express.static(path.join(__dirname, "client")));
+
+//   const indexPath = path.join(__dirname, "client", "index.html");
+
+//   app.get("*", (req, res) => {
+//     res.sendFile(indexPath);
+//   });
+// }
+
   app.use("/", express.static(path.join(__dirname, "client")));
 
   const indexPath = path.join(__dirname, "client", "index.html");
@@ -28,7 +37,6 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
     res.sendFile(indexPath);
   });
-}
 
 async function start() {
   try {
