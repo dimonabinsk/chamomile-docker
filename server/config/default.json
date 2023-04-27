@@ -3,7 +3,7 @@
   "accessSecret": "super secret from backend",
   "refreshSecret": "super refresh key",
   "BASE_URL": "https://mda-web.ru/api",
-  "MONGODB_URI": "mongodb://root:admin@mongo_db:2717/",
+  "MONGODB_URI": "mongodb://root:admin@mongo_db:27017/",
   "DB_NAME": "chamomile_db",
   "NAME": "Dimon",
   "DB_USER": "root",
