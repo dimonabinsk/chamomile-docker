@@ -7,6 +7,7 @@ const initDataBase = require("./initDB/initDataBase");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
 const config = require("./config/default.json");
+const path = require("path");
 const app = express();
 
 app.use(express.static("public"));
